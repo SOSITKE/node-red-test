@@ -1,0 +1,15 @@
+{
+  "name": "Node-RED IoT SOS",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "forwardPorts": [1880],
+  "portsAttributes": {
+    "1880": {
+      "label": "Node-RED Editor",
+      "onAutoForward": "openBrowser",
+      "visibility": "private"
+    }
+  },
+  "postCreateCommand": "npm install -g node-red && mkdir -p ~/.node-red && cd ~/.node-red && npm install @flowfuse/node-red-dashboard",
+  "postStartCommand": "bash .devcontainer/start-node-red.sh",
+  "postAttachCommand": "bash .devcontainer/start-node-red.sh"
+}
